@@ -14,72 +14,30 @@ const Sidebar = () => {
         <div className="data-scrollbar" data-scroll="1">
             <div className="new-create select-dropdown input-prepend input-append">
                 <div className="btn-group">
-                    <div data-toggle="dropdown">
-                    <div className="search-query selet-caption"><i className="las la-plus pr-2"></i>Create New</div><span className="search-replace"></span>
-                    <span className="caret"></span>
-                    </div>
-                    <ul className="dropdown-menu">
-                        <li><div className="item"><i className="ri-folder-add-line pr-3"></i>New Folder</div></li>
-                        <li><div className="item"><i className="ri-file-upload-line pr-3"></i>Upload Files</div></li>
-                        <li><div className="item"><i className="ri-folder-upload-line pr-3"></i>Upload Folders</div></li>
-                    </ul>
+                <div className="search-query selet-caption"><a href="#"><i className="lar la-file-alt iq-arrow-left la-lg pr-2"></i>All Files</a></div><span className="search-replace"></span>
+                <span className="caret"></span>
                 </div>
             </div>
             <nav className="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" className="iq-menu">
-                     <li className=" ">
-                            <a href="../backend/index.html" className="">
-                                <i className="las la-home iq-arrow-left"></i><span>Dashboard</span>
-                            </a>
-                        <ul id="dashboard" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        </ul>
-                     </li>
-                     <li className=" ">
-                        <a href="#mydrive" className="collapsed" data-toggle="collapse" aria-expanded="false">
-                            <i className="las la-hdd"></i><span>My Drive</span>
-                            <i className="las la-angle-right iq-arrow-right arrow-active"></i>
-                            <i className="las la-angle-down iq-arrow-right arrow-hover"></i>
-                        </a>
-                        <ul id="mydrive" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                                <li className=" ">
-                                        <a href="../backend/page-alexa.html">
-                                            <i className="lab la-blogger-b"></i><span>Alexa Workshop</span>
-                                        </a>
-                                </li>
-                                <li className=" ">
-                                        <a href="../backend/page-android.html">
-                                            <i className="las la-share-alt"></i><span>Android</span>
-                                        </a>
-                                </li>
-                                <li className=" ">
-                                        <a href="../backend/page-brightspot.html">
-                                            <i className="las la-icons"></i><span>Brightspot</span>
-                                        </a>
-                                </li>
-                                <li className=" ">
-                                        <a href="../backend/page-ionic.html">
-                                            <i className="las la-icons"></i><span>Ionic Chat App</span>
-                                        </a>
-                                </li>
-                        </ul>
-                     </li>
-                     <li className=" ">
-                            <a href="../backend/page-files.html" className="">
-                                <i className="lar la-file-alt iq-arrow-left"></i><span>Files</span>
-                            </a>
-                        <ul id="page-files" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        </ul>
-                     </li>
-                     <li className=" ">
+                <li className=" ">
                             <a href="../backend/page-folders.html" className="">
                                 <i className="las la-stopwatch iq-arrow-left"></i><span>Recent</span>
                             </a>
                         <ul id="page-folders" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         </ul>
                      </li>
+                     
                      <li className=" ">
                             <a href="../backend/page-favourite.html" className="">
-                                <i className="lar la-star"></i><span>Favourite</span>
+                            <i class="las la-signature"></i><span>Sign</span>
+                            </a>
+                        <ul id="page-fevourite" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        </ul>
+                     </li>
+                     <li className=" ">
+                            <a href="../backend/page-favourite.html" className="">
+                            <i class="las la-th"></i><span>App</span>
                             </a>
                         <ul id="page-fevourite" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         </ul>
@@ -93,7 +51,7 @@ const Sidebar = () => {
                      </li>
                      <li className=" ">
                         <a href="#otherpage" className="collapsed" data-toggle="collapse" aria-expanded="false">
-                            <i className="lab la-wpforms iq-arrow-left"></i><span>other page</span>
+                            <span>My Collections</span>
                             <i className="las la-angle-right iq-arrow-right arrow-active"></i>
                             <i className="las la-angle-down iq-arrow-right arrow-hover"></i>
                         </a>

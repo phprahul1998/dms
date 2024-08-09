@@ -89,7 +89,10 @@ body {
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important; }
-
+  .iq-sidebar {
+   
+    background-color: rgb(0, 97, 213) !important;
+    }
 hr {
   box-sizing: content-box;
   height: 0;
@@ -7079,7 +7082,7 @@ a.text-pink:hover, a.text-pink:focus {
         font-size: 16px;
         white-space: nowrap;
         display: block;
-        color: #535f6b;
+        color: #fff;
         position: relative;
         padding: 15px 20px;
         line-height: 18px;
@@ -7380,7 +7383,7 @@ a.text-pink:hover, a.text-pink:focus {
     padding-left: 20px; }
   .sidebar-main .iq-sidebar .iq-submenu li a {
     font-size: 0; } }
-
+    
 @media (max-width: 1299px) {
   .iq-sidebar {
     display: inline-block;
@@ -7390,6 +7393,7 @@ a.text-pink:hover, a.text-pink:focus {
   body.sidebar-main .iq-sidebar {
     width: 260px;
     left: 0;
+    background-color: rgb(0, 97, 213);
     z-index: 999; } }
 
 @media (min-width: 1300px) {
@@ -16662,17 +16666,23 @@ ul.iq-contact-rest li a p {
     .new-create.select-dropdown .selet-caption {
       width: 220px;
       display: inline-block;
-      padding: 10px 20px;
-      text-align: center;
+      padding:15px 0px 15px 5px;
       font-weight: normal !important;
       font-size: inherit;
-      color: #01041b;
       -webkit-border-radius: 8px;
       -moz-border-radius: 8px;
       -ms-border-radius: 8px;
       -o-border-radius: 8px;
       border-radius: 8px;
-      background: #f3f3f3; }
+      background-color: rgb(0, 78, 172); 
+     color: #fff !important;
+     text-decoration: none !important;
+    }
+    .new-create.select-dropdown .selet-caption a {
+    
+     color: #fff !important;
+     text-decoration: none !important;
+    }
 
 .select-dropdown {
   position: relative; }
