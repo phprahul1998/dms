@@ -7084,7 +7084,7 @@ a.text-pink:hover, a.text-pink:focus {
         display: block;
         color: #fff;
         position: relative;
-        padding: 15px 20px;
+        padding: 10px 20px;
         line-height: 18px;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -7263,10 +7263,18 @@ a.text-pink:hover, a.text-pink:focus {
 .sidebar-bottom {
   margin: 0 15px;
   padding: 20px 15px 0;
-  border-top: 1px solid #f1f1f1; }
+  border-top: 1px solid #f1f1f1; 
+color: #fff !important;
+}
   .sidebar-bottom h4 i {
     font-size: 1.2em;
-    font-weight: 700; }
+    font-weight: 700;
+    color: #fff !important;
+   }
+   .sidebar-bottom h4 {
+   
+    color: #fff !important;
+   }
 
 .iq-sidebar-logo {
   padding: 15px;
