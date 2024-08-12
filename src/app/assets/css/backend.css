@@ -69,7 +69,7 @@
   box-sizing: border-box; }
 
 html {
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif !important;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
@@ -79,7 +79,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -114,6 +114,10 @@ abbr[data-original-title] {
   border-bottom: 0;
   text-decoration-skip-ink: none; }
 
+.selet-caption a i{
+  font-size: 15px;
+
+}
 address {
   margin-bottom: 1rem;
   font-style: normal;
@@ -1212,10 +1216,15 @@ pre {
   .table td {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #f1f1f1; }
+    border-top: 2px solid #f1f1f1;
+    font-size: 15px !important
+  }
   .table thead th {
     vertical-align: bottom;
-    border-bottom: 2px solid #f1f1f1; }
+    border-bottom: 2px solid #f1f1f1; 
+    font-weight: 400 !important;
+    font-size:12px !important
+  }
   .table tbody + tbody {
     border-top: 2px solid #f1f1f1; }
 
@@ -1241,9 +1250,12 @@ pre {
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.05); }
 
-.table-hover tbody tr:hover {
+.table tbody tr:hover {
   color: #535f6b;
-  background-color: rgba(0, 0, 0, 0.075); }
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  border-radius: 10px;
+}
 
 .table-primary,
 .table-primary > th,
@@ -7077,14 +7089,14 @@ a.text-pink:hover, a.text-pink:focus {
         margin: 0;
         background: transparent !important; }
         .iq-sidebar-menu .iq-menu li li a {
-          font-size: 16px; }
+          font-size: 13px; }
       .iq-sidebar-menu .iq-menu li a {
-        font-size: 16px;
+        font-size: 13px;
         white-space: nowrap;
         display: block;
         color: #fff;
         position: relative;
-        padding: 10px 20px;
+        padding: 15px 20px;
         line-height: 18px;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -7096,8 +7108,8 @@ a.text-pink:hover, a.text-pink:focus {
         border-radius: 0px;
         text-transform: capitalize; }
         .iq-sidebar-menu .iq-menu li a i {
-          font-size: 20px;
-          margin-right: 10px;
+          font-size: 17px;
+          margin-right: 5px;
           vertical-align: middle;
           width: 20px;
           display: inline-block; }
@@ -7272,7 +7284,7 @@ color: #fff !important;
     color: #fff !important;
    }
    .sidebar-bottom h4 {
-   
+    font-size: 15px;
     color: #fff !important;
    }
 
@@ -7894,7 +7906,7 @@ body.sidebar-main .iq-top-navbar {
     .iq-navbar-logo a:focus {
       text-decoration: none; }
   .iq-navbar-logo img {
-    height: 50px; }
+    height: 66px; }
 
 .iq-sub-dropdown.iq-sub-dropdown-large {
   width: 500px; }
@@ -8008,7 +8020,7 @@ body.sidebar-main .iq-top-navbar {
 
 @media (min-width: 1300px) {
   .iq-navbar-logo {
-    display: none !important; }
+    display: block !important; }
     .iq-navbar-logo > a {
       display: none; }
   .iq-menu-horizontal .iq-sidebar-menu .iq-menu li a.collapsed {
@@ -14966,7 +14978,9 @@ g[aria-describedby="id-22-description"] {
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; }
+  transition: all 0.3s ease-in-out; 
+background-color: #fff !important;
+}
 
 @media (min-width: 1300px) {
   body.sidebar-main .content-page {
@@ -16671,10 +16685,10 @@ ul.iq-contact-rest li a p {
     width: 220px; }
     .new-create.select-dropdown .btn-group .dropdown-menu {
       width: 220px; }
-    .new-create.select-dropdown .selet-caption {
+     .selet-caption {
       width: 220px;
       display: inline-block;
-      padding:15px 0px 15px 5px;
+      /* padding:15px 0px 15px 5px; */
       font-weight: normal !important;
       font-size: inherit;
       -webkit-border-radius: 8px;
@@ -16685,9 +16699,14 @@ ul.iq-contact-rest li a p {
       background-color: rgb(0, 78, 172); 
      color: #fff !important;
      text-decoration: none !important;
+     margin-left: 10px;
+    }
+    .selet-caption  a{
+      position: relative  !important;
+      right: 7px;
     }
     .new-create.select-dropdown .selet-caption a {
-    
+     font-size: 13px;
      color: #fff !important;
      text-decoration: none !important;
     }

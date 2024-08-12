@@ -7,7 +7,7 @@ const login =()=>{
             <div className="row justify-content-center align-items-center height-self-center">
                <div className="col-md-5 col-sm-12 col-12 align-self-center">
                   <div className="sign-user_card">
-                        <img src="/logo.png" className="img-fluid rounded-normal light-logo logo" alt="logo"/>
+                    <img src="/logo.png" className="img-fluid rounded-normal light-logo logo" alt="logo"/>
                      <h3 className="mb-3">Sign In</h3>
                      <p>Login to stay connected.</p>
                      <form>

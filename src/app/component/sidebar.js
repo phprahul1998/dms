@@ -1,43 +1,69 @@
+"use client"
+import Link from 'next/link'
+import { useEffect,useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 const Sidebar = () => {    
+    const router = usePathname();
+    const navigate = useRouter();
+    const [activeItem, setActiveItem] = useState('all-file');
+
+    useEffect(() => {
+        if (router === '/') {
+            navigate.push('/all-file');
+        } else {
+            setActiveItem(router);
+        }
+    }, [router]);
+
+    const handleItemClick = (path) => {
+        setActiveItem(path);
+    };
     return (
         <div>
-            <div className="iq-sidebar  sidebar-default ">
+        <div className="iq-sidebar sidebar-default d-flex flex-column ">
         <div className="iq-sidebar-logo d-flex align-items-center justify-content-between">
-            <a href="index.html" className="header-logo">
-                <img src="/logo.png" className="img-fluid rounded-normal light-logo" alt="logo"/>
-                {/* <img src="/logo-white.png" className="img-fluid rounded-normal darkmode-logo" alt="logo"/> */}
-            </a>
+            <Link    href="/" className="header-logo iq-navbar-logo">
+            <img src="/logo2.png" className="img-fluid rounded-normal light-logo" alt="logo"/>
+            </Link>
+          
             <div className="iq-menu-bt-sidebar">
                 <i className="las la-bars wrapper-menu"></i>
             </div>
         </div>
         <div className="data-scrollbar" data-scroll="1">
-            <div className="new-create select-dropdown input-prepend input-append">
+            {/* <div className="new-create select-dropdown input-prepend input-append">
                 <div className="btn-group">
-                <div className="search-query selet-caption"><a href="#"><i className="lar la-file-alt iq-arrow-left la-lg pr-2"></i>All Files</a></div><span className="search-replace"></span>
+                <div className="search-query selet-caption"><a href="#"><i className="lar la-file-alt iq-arrow-left  pr-2"></i>All Files</a></div><span className="search-replace"></span>
                 <span className="caret"></span>
                 </div>
-            </div>
+            </div> */}
             <nav className="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" className="iq-menu">
-                <li className=" ">
-                            <a href="../backend/page-folders.html" className="">
+                <li className={activeItem === '/all-file' ? 'selet-caption' : ''}>
+                <Link href="/all-file" onClick={() => handleItemClick('/all-file')}>
+                                <i className="lar la-file-alt iq-arrow-left pr-2"></i>All Files
+                            </Link>                       
+                        <ul id="page-folders" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        </ul>
+                     </li>
+                <li className={activeItem === '/recents' ? 'selet-caption' : ''}>
+                <Link href="/recents" onClick={() => handleItemClick('/recents')}>
                                 <i className="las la-stopwatch iq-arrow-left"></i><span>Recent</span>
-                            </a>
+                            </Link>
                         <ul id="page-folders" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         </ul>
                      </li>
                      
                      <li className=" ">
                             <a href="../backend/page-favourite.html" className="">
-                            <i class="las la-signature"></i><span>Sign</span>
+                            <i className="las la-signature"></i><span>Sign</span>
                             </a>
                         <ul id="page-fevourite" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         </ul>
                      </li>
                      <li className=" ">
                             <a href="../backend/page-favourite.html" className="">
-                            <i class="las la-th"></i><span>App</span>
+                            <i className="las la-th"></i><span>App</span>
                             </a>
                         <ul id="page-fevourite" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         </ul>
@@ -49,33 +75,33 @@ const Sidebar = () => {
                         <ul id="page-delete" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         </ul>
                      </li>
-                     <li class=" ">
-                          <a href="#otherpage" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                              <i class="lab la-wpforms iq-arrow-left"></i><span>My Collection</span>
-                              <i class="las la-angle-right iq-arrow-right arrow-active"></i>
-                              <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                     <li className=" ">
+                          <a href="#otherpage" className="collapsed" data-toggle="collapse" aria-expanded="false">
+                              <i className="lab la-wpforms iq-arrow-left"></i><span>My Collection</span>
+                              <i className="las la-angle-right iq-arrow-right arrow-active"></i>
+                              <i className="las la-angle-down iq-arrow-right arrow-hover"></i>
                           </a>
-                          <ul id="otherpage" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                                  <li class=" ">
-                                      <a href="#user" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                                          <i class="las la-user-cog"></i><span>Favourites</span>
-                                          <i class="las la-angle-right iq-arrow-right arrow-active"></i>
-                                          <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
+                          <ul id="otherpage" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                  <li className=" ">
+                                      <a href="#user" className="collapsed" data-toggle="collapse" aria-expanded="false">
+                                          <i className="las la-user-cog"></i><span>Favourites</span>
+                                          <i className="las la-angle-right iq-arrow-right arrow-active"></i>
+                                          <i className="las la-angle-down iq-arrow-right arrow-hover"></i>
                                       </a>
-                                      <ul id="user" class="iq-submenu collapse" data-parent="#otherpage">
-                                              <li class=" ">
+                                      <ul id="user" className="iq-submenu collapse" data-parent="#otherpage">
+                                              <li className=" ">
                                                   <a href="../app/user-profile.html">
-                                                      <i class="las la-id-card"></i><span>favourite 1</span>
+                                                      <i className="las la-id-card"></i><span>favourite 1</span>
                                                   </a>
                                               </li>
-                                              <li class=" ">
+                                              <li className=" ">
                                                   <a href="../app/user-add.html">
-                                                      <i class="las la-user-plus"></i><span>favourite 2</span>
+                                                      <i className="las la-user-plus"></i><span>favourite 2</span>
                                                   </a>
                                               </li>
-                                              <li class=" ">
+                                              <li className=" ">
                                                   <a href="../app/user-list.html">
-                                                      <i class="las la-list-alt"></i><span>favourite 3</span>
+                                                      <i className="las la-list-alt"></i><span>favourite 3</span>
                                                   </a>
                                               </li>
                                       </ul>
@@ -87,30 +113,29 @@ const Sidebar = () => {
                      
                 </ul>
             </nav>
-            <div className="sidebar-bottom">
-                <h4 className="mb-3"><i className="las la-cloud mr-2"></i>Storage</h4>
-                
+           
+            <div className="p-3"></div>
+        </div>
+        <div className="sidebar-bottom mt-auto">
+        <h4 className="mb-3"><i className="las la-cloud mr-2"></i>Storage</h4>
                 <p>37.4 MB of 10.0 GB used</p>
                 <div className="iq-progress-bar mb-3">
                     <span className="bg-primary iq-progress progress-1" data-percent="67">
                     </span>
                 </div>
-                <a href="#" className="btn btn-outline-primary view-more mt-4">Buy Storage</a>
             </div>
-            <div className="p-3"></div>
-        </div>
-        </div>       <div className="iq-top-navbar">
+        </div>      
+         <div className="iq-top-navbar">
         <div className="iq-navbar-custom">
             <nav className="navbar navbar-expand-lg navbar-light p-0">
-            <div className="iq-navbar-logo d-flex align-items-center justify-content-between">
+            <div className="iq-navbar-logo d-flex align-items-center">
                 <i className="ri-menu-line wrapper-menu"></i>
                 <a href="index.html" className="header-logo">
-                    <img src="/logo.png" className="img-fluid rounded-normal light-logo" alt="logo"/>
+                    <img src="/logo2.png" className="img-fluid rounded-normal light-logo" alt="logo"/>
                     {/* <img src="/logo-white.png" className="img-fluid rounded-normal darkmode-logo" alt="logo"/> */}
                 </a>
             </div>
-                <div className="iq-search-bar device-search">
-                    
+                <div className="iq-search-bar device-search position-absolute">
                     <form>
                         <div className="input-prepend input-append">
                             <div className="btn-group">
@@ -133,18 +158,7 @@ const Sidebar = () => {
                 </div>
     
                 <div className="d-flex align-items-center">
-                    <div className="change-mode">
-                        <div className="custom-control custom-switch custom-switch-icon custom-control-inline">
-                            <div className="custom-switch-inner">
-                                <p className="mb-0"> </p>
-                                <input type="checkbox" className="custom-control-input" id="dark-mode" data-active="true"/>
-                                <label className="custom-control-label" data-mode="toggle">
-                                    <span className="switch-icon-left"><i className="a-left"></i></span>
-                                    <span className="switch-icon-right"><i className="a-right"></i></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-label="Toggle navigation">
                     <i className="ri-menu-3-line"></i>
                     </button>
