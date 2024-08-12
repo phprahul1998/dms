@@ -8,7 +8,7 @@ const forgetpassword =()=>{
                     <div className="sign-user_card">
                           <img src="/logo.png" className="img-fluid rounded-normal light-logo logo" alt="logo"/>
                        <h2 className="mb-3">Reset Password</h2>
-                       <p>Enter your email address and we'll send you an email with instructions to reset your password.</p>
+                       <p>Enter your email address and we will send you an email with instructions to reset your password.</p>
                        <form>
                           <div className="row">
                              <div className="col-lg-12">
