@@ -5,7 +5,7 @@ import { signIn, getSession } from 'next-auth/react';
 import { ToastContainer, toast } from 'react-toastify';
 import { useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
-const login =()=>{
+const Login =()=>{
    const [usernameError, setUsernameError] = useState(false);
    const [passwordError, setPasswordError] = useState(false);
    const [username, setUsername] = useState('');
@@ -121,4 +121,4 @@ const login =()=>{
       </div>
     );
 }
-export default login
+export default Login
