@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>{children}</body>
+      <Script  src="/js/jquery.min.js"/>
       <Script  src="/js/backend-bundle.min.js" strategy="afterInteractive"/>
       <Script  src="/js/app.js" strategy="afterInteractive"/>
     </html>
