@@ -1,4 +1,4 @@
-const footer = () => {    
+const Footer = () => {    
     return (
     <div>
         <footer className="iq-footer">
@@ -20,4 +20,4 @@ const footer = () => {
     )
 
 }
-export default footer;
+export default Footer;
