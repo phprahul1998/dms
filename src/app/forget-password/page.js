@@ -6,7 +6,7 @@ const forgetpassword =()=>{
               <div className="row justify-content-center align-items-center height-self-center">
                  <div className="col-md-5 col-sm-12 col-12 align-self-center">
                     <div className="sign-user_card">
-                          <img src="/logo.png" className="img-fluid rounded-normal light-logo logo" alt="logo"/>
+                          <img src="/logo2.png" className="img-fluid rounded-normal light-logo logo" alt="logo"/>
                        <h2 className="mb-3">Reset Password</h2>
                        <p>Enter your email address and we will send you an email with instructions to reset your password.</p>
                        <form>

@@ -15,10 +15,10 @@ const recents =()=>{
                              <h4 className="card-title">Recents Files</h4>
                           </div>
                           <div className="header-title">
-                          <button type="button" class="btn btn-outline-secondary text-bold">New <i class="las la-plus"></i></button>
+                          <button type="button" className="btn btn-outline-secondary text-bold">New <i className="las la-plus"></i></button>
                           </div>
                        </div>
-                        <table class="table">
+                        <table className="table">
                         <thead>
                         <tr>
                         <th>Name</th>

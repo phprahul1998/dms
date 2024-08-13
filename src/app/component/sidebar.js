@@ -2,11 +2,11 @@
 import Link from 'next/link'
 import { useEffect,useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import LogoutButton from '../component/LogoutButton';
 const Sidebar = () => {    
     const router = usePathname();
     const navigate = useRouter();
     const [activeItem, setActiveItem] = useState('all-file');
-
     useEffect(() => {
         if (router === '/') {
             navigate.push('/all-file');
@@ -185,44 +185,69 @@ const Sidebar = () => {
                                 <div className="card shadow-none m-0">
                                     <div className="card-body p-0 ">
                                         <div className="p-3">
-                                            <a href="#" className="iq-sub-card pt-0"><i className="ri-questionnaire-line"></i>Help</a>
-                                            <a href="#" className="iq-sub-card"><i className="ri-recycle-line"></i>Training</a>
-                                            <a href="#" className="iq-sub-card"><i className="ri-refresh-line"></i>Updates</a>
-                                            <a href="#" className="iq-sub-card"><i className="ri-service-line"></i>Terms and Policy</a>
+                                            <a href="#" className="iq-sub-card pt-0"><i className="ri-questionnaire-line"></i>Get Help</a>
+                                            <a href="#" className="iq-sub-card"><i className="ri-refresh-line"></i>Support</a>
+                                            <a href="#" className="iq-sub-card"><i className="ri-refresh-line"></i>Help center</a>
+                                            <a href="#" className="iq-sub-card"><i className="ri-recycle-line"></i>Get Training</a>
+                                        
                                             <a href="#" className="iq-sub-card"><i className="ri-feedback-line"></i>Send Feedback</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li className="nav-item nav-icon dropdown"> 
-                            <a href="#" className="search-toggle dropdown-toggle" id="dropdownMenuButton02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                            <i className="ri-settings-3-line"></i>
+                        <li className="nav-item nav-icon dropdown">
+                            <a href="#" className="search-toggle dropdown-toggle" id="dropdownMenuButton01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i className="las la-clipboard-check"></i>
                             </a>
-                            <div className="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton02">
+                            <div className="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton01">
                                 <div className="card shadow-none m-0">
                                     <div className="card-body p-0 ">
-                                        <div className="p-3">
-                                            <a href="#" className="iq-sub-card pt-0"><i className="ri-settings-3-line"></i> Settings</a>
-                                            <a href="#" className="iq-sub-card"><i className="ri-hard-drive-line"></i> Get Drive for desktop</a>
-                                            <a href="#" className="iq-sub-card"><i className="ri-keyboard-line"></i> Keyboard Shortcuts</a>
-                                        </div>                                
+                                        <div className="p-3 navbaraction">
+                                            <strong className='text-left'>Tasks</strong>
+                                            <br/>
+                                            <img src='/task.png'/>
+                                            <div>
+                                            <strong>You're all caught up
+                                            </strong>
+                                            <p>Tasks assigned to you will appear here. Check back later for work coming your way.
+                                            </p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                        <li className="nav-item nav-icon dropdown">
+                            <a href="#" className="search-toggle dropdown-toggle" id="dropdownMenuButton01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i className="las la-bell"></i>
+                            </a>
+                            <div className="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton01">
+                                <div className="card shadow-none m-0">
+                                    <div className="card-body p-0 ">
+                                    <div className="p-3 navbaraction">
+                                            <strong className='text-left'>Notifications</strong>
+                                            <br/>
+                                            <img src='/noti.png'/>
+                                            <div>
+                                            <strong>No Notifications
+                                            </strong>
+                                            <p>You don't have any notifications at the moment
+                                            </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                       
                         <li className="nav-item nav-icon dropdown caption-content">
                             <a href="#" className="search-toggle dropdown-toggle" id="dropdownMenuButton03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                 <div className="caption bg-primary line-height">P</div>
                             </a>
                             <div className="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton03">
                                 <div className="card mb-0">
-                                    <div className="card-header d-flex justify-content-between align-items-center mb-0">
-                                    <div className="header-title">
-                                        <h4 className="card-title mb-0">Profile</h4>
-                                    </div>
-                                    <div className="close-data text-right badge badge-primary cursor-pointer "><i className="ri-close-fill"></i></div>
-                                    </div>
+                                    
                                     <div className="card-body">
                                         <div className="profile-header">
                                             <div className="cover-container text-center">
@@ -236,45 +261,16 @@ const Sidebar = () => {
                                                 <h5><a href="../app/user-profile-edit.html">Panny Marco</a></h5>
                                                 <p>pannymarco@gmail.com</p>
                                                 </div>
-                                                <a href="auth-sign-in.html" className="btn btn-primary">Sign Out</a>
-                                            </div>
-                                            <div className="profile-details mt-4 pt-4 border-top">
-                                                <div className="media align-items-center mb-3">
-                                                    <div className="rounded-circle iq-card-icon-small bg-primary">
-                                                        A
-                                                    </div>
-                                                    <div className="media-body ml-3">
-                                                        <div className="media justify-content-between">
-                                                            <h6 className="mb-0">Anna Mull</h6>
-                                                            <p className="mb-0 font-size-12"><i>Signed Out</i></p>
-                                                        </div>
-                                                        <p className="mb-0 font-size-12">annamull@gmail.com</p>
-                                                    </div>                                                 
+                                                <LogoutButton />
                                                 </div>
-                                                <div className="media align-items-center mb-3">
-                                                    <div className="rounded-circle iq-card-icon-small bg-success">
-                                                        K
-                                                    </div>
-                                                    <div className="media-body ml-3">
-                                                        <div className="media justify-content-between">
-                                                            <h6 className="mb-0">King Poilin</h6>
-                                                            <p className="mb-0 font-size-12"><i>Signed Out</i></p>
-                                                        </div>
-                                                        <p className="mb-0 font-size-12">kingpoilin@gmail.com</p>
-                                                    </div>
-                                                </div>
-                                                <div className="media align-items-center">
-                                                    <div className="rounded-circle iq-card-icon-small bg-danger">
-                                                        D
-                                                    </div>
-                                                    <div className="media-body ml-3">
-                                                        <div className="media justify-content-between">
-                                                            <h6 className="mb-0">Devid Worner</h6>
-                                                            <p className="mb-0 font-size-12"><i>Signed Out</i></p>
-                                                        </div>
-                                                        <p className="mb-0 font-size-12">devidworner@gmail.com</p>
-                                                    </div>
-                                                </div>
+                                            <div className="profile-details mt-4 pt-3 border-top">
+                                            <ul>
+                                                <li>
+                                                    <Link href="">View Profile</Link> 
+                                                
+                                                </li>
+                                            </ul>
+                                        
                                             </div>
                                         </div>
                                     </div>

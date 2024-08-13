@@ -8,17 +8,16 @@ return(
 <div className="content-page">
 <div className="container-fluid">
 <div className="row">
-<div className="col-sm-12">
-<div className="">
-<div className=" d-flex justify-content-between mb-2">
+<div className="col-sm-12 col-lg-12 col-md-12 col-xl-12">
+<div className="d-flex justify-content-between mb-2">
 <div className="header-title">
 <h4 className="card-title">All Files</h4>
 </div>
 <div className="header-title">
-<button type="button" class="btn btn-outline-secondary text-bold">New <i class="las la-plus"></i></button>
+<button type="button" className="btn btn-outline-secondary text-bold">New <i className="las la-plus"></i></button>
 </div>
 </div>
-<table class="table">
+<table className="table">
 <thead>
 <tr>
 <th>Name</th>
@@ -86,7 +85,6 @@ return(
 </tbody>
 </table>
 
-</div>
 </div>
 </div>
 </div>

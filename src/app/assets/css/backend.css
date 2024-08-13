@@ -85,7 +85,11 @@ body {
   line-height: 1.5;
   color: #535f6b;
   text-align: left;
-  background-color: #fafbfe; }
+  background-color: #fafbfe !important; }
+  a{
+    text-decoration: none !important;
+
+  }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important; }
@@ -1255,6 +1259,17 @@ pre {
   box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   border-radius: 10px;
+}
+.profile-details ul{
+  padding: 0 !important;
+}
+.input-error{
+  border: 1px solid #ffb2b2 !important;
+}
+
+.profile-details ul li a{
+  font-size: 14px !important;
+  line-height:normal !important
 }
 
 .table-primary,
@@ -7949,6 +7964,21 @@ body.sidebar-main .iq-top-navbar {
   display: flex;
   align-items: center;
   justify-content: center; }
+  .navbaraction{
+    text-align: center;
+    
+  }
+.navbaraction img{
+  width: 150px;
+  padding: 20px;
+}
+.navbaraction strong{
+  font-size: 13px;
+  padding: 10px;
+}
+.navbaraction p{
+  font-size: 12px;
+}
 
 .right-ic {
   -webkit-border-radius: 0 0 8px 8px;
