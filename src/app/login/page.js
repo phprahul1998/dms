@@ -60,7 +60,7 @@ const Login =()=>{
            const session = await getSession();
            console.log(session);
            // Redirect to the desired page
-           push('/all-file');
+         //   push('/all-file');
          }
        } catch (error) {
          console.error('An error occurred during sign-in:', error);
