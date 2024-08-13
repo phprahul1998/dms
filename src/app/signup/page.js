@@ -1,5 +1,5 @@
 import Link from 'next/link'
-const signup =()=>{
+const Signup =()=>{
     return(
         <div className="wrapper">
         <section className="login-content">
@@ -58,4 +58,4 @@ const signup =()=>{
         </div>
     );
 }
-export default signup
+export default Signup

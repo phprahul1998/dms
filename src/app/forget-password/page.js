@@ -1,4 +1,4 @@
-const forgetpassword =()=>{
+const Forgetpassword =()=>{
     return(
         <div className="wrapper">
         <section className="login-content">
@@ -28,4 +28,4 @@ const forgetpassword =()=>{
         </div>
     );
 }
-export default forgetpassword
+export default Forgetpassword

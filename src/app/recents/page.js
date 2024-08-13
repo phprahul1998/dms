@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Sidebar from "../component/sidebar";
 import Footer from "../component/footer";
-const recents =()=>{
+const Recents =()=>{
     return(
        <div>
          <Sidebar/>
@@ -54,4 +54,4 @@ const recents =()=>{
        </div>
     );
 }
-export default recents
+export default Recents

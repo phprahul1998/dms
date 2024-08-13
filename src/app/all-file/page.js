@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Sidebar from "../component/sidebar";
 import Footer from "../component/footer";
-const allfiles =()=>{
+const Allfile =()=>{
 return(
 <div>
 <Sidebar/>
@@ -93,4 +93,4 @@ return(
 </div>
 );
 }
-export default allfiles
+export default Allfile
