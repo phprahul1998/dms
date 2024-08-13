@@ -58,9 +58,9 @@ const Login =()=>{
            console.error(res.error);
          } else {
            const session = await getSession();
-           console.log(session);
-           // Redirect to the desired page
-         //   push('/all-file');
+           if (session) {
+            push('/all-file'); // Redirect to the /all-file page
+          }
          }
        } catch (error) {
          console.error('An error occurred during sign-in:', error);
