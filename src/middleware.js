@@ -4,8 +4,8 @@ import { NextResponse } from 'next/server';
 export async function middleware(request) {
   const sessionToken = await getToken({ req: request, secret: process.env.NEXTAUTH_SECRET });
   const { pathname } = request.nextUrl;
-  console.log(pathname)
-  console.log(sessionToken)
+  console.log("rahul"+pathname)
+  console.log("session"+sessionToken)
   if (!sessionToken && pathname !== '/login' && !pathname.startsWith('/js/')) {
     return NextResponse.redirect(new URL('/login', request.url), 302);
   }
