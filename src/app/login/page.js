@@ -59,7 +59,10 @@ const Login =()=>{
          } else {
            const session = await getSession();
            if (session) {
-            push('/all-file'); // Redirect to the /all-file page
+            setTimeout(() => {
+               push('/all-file');
+             }, 1000);
+             
           }
          }
        } catch (error) {

@@ -10,9 +10,9 @@ export async function middleware(request) {
     return NextResponse.redirect(new URL('/login', request.url), 302);
   }
 
-  // if (sessionToken && pathname === '/login') {
-  //   return NextResponse.redirect(new URL('/all-file', request.url), 302);
-  // }
+  if (sessionToken && pathname === '/login') {
+    return NextResponse.redirect(new URL('/all-file', request.url), 302);
+  }
 
   return NextResponse.next();
 }
