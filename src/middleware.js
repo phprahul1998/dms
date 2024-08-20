@@ -7,12 +7,12 @@ export async function middleware(request) {
   console.log(pathname)
   console.log(sessionToken)
   if (!sessionToken && pathname !== '/login' && !pathname.startsWith('/js/')) {
-    return NextResponse.redirect(new URL('/login', request.url), 302).headers.set('Cache-Control', 'no-store');;
+    return NextResponse.redirect(new URL('/login', request.url), 302);
   }
 
-  if (sessionToken && pathname === '/login') {
-    return NextResponse.redirect(new URL('/all-file', request.url), 302).headers.set('Cache-Control', 'no-store');;
-  }
+  // if (sessionToken && pathname === '/login') {
+  //   return NextResponse.redirect(new URL('/all-file', request.url), 302);
+  // }
 
   return NextResponse.next();
 }
