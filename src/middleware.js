@@ -4,6 +4,7 @@ import { NextResponse } from 'next/server';
 export async function middleware(request) {
   const sessionToken = await getToken({ req: request, secret: process.env.NEXTAUTH_SECRET });
   const { pathname } = request.nextUrl;
+  console.log("env secrate token"+process.env.NEXTAUTH_SECRET)
   console.log("rahul"+pathname)
   console.log("session"+sessionToken)
   if (!sessionToken && pathname !== '/login' && !pathname.startsWith('/js/')) {
