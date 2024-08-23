@@ -1,9 +1,14 @@
 "use client"
 import Link from 'next/link'
+import { useSession } from "next-auth/react";
 import { useEffect,useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import LogoutButton from '../component/LogoutButton';
-const Sidebar = () => {    
+export default function Sidebar(){   
+    const { data: session } = useSession();
+    const [username,setUsername] = useState('')
+    const [useremail,setEmail] = useState('')
+    const [firstchat,setFirstChar] = useState('')
     const router = usePathname();
     const navigate = useRouter();
     const [activeItem, setActiveItem] = useState('all-file');
@@ -13,7 +18,12 @@ const Sidebar = () => {
         } else {
             setActiveItem(router);
         }
-    }, [router]);
+        if (session && session.user) {
+            setUsername(session.user.name || '');
+            setEmail(session.user.email || '');
+            setFirstChar(session.user.name.charAt(0));
+        }
+    }, [router,session]);
 
     const handleItemClick = (path) => {
         setActiveItem(path);
@@ -243,7 +253,7 @@ const Sidebar = () => {
                        
                         <li className="nav-item nav-icon dropdown caption-content">
                             <a href="#" className="search-toggle dropdown-toggle" id="dropdownMenuButton03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                <div className="caption bg-primary line-height">P</div>
+                                <div className="caption bg-primary line-height text-capitalize">{firstchat}</div>
                             </a>
                             <div className="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton03">
                                 <div className="card mb-0">
@@ -251,15 +261,15 @@ const Sidebar = () => {
                                     <div className="card-body">
                                         <div className="profile-header">
                                             <div className="cover-container text-center">
-                                                <div className="rounded-circle profile-icon bg-primary mx-auto d-block">
-                                                    P                                                    
+                                                <div className="rounded-circle profile-icon text-capitalize bg-primary mx-auto d-block">
+                                                    {firstchat}                                                   
                                                     <a href="">
                                                         
                                                     </a>
                                                 </div>
                                                 <div className="profile-detail mt-3">
-                                                <h5><a href="../app/user-profile-edit.html">Panny Marco</a></h5>
-                                                <p>pannymarco@gmail.com</p>
+                                                <h5><a href="../app/user-profile-edit.html">{username}</a></h5>
+                                                <p>{useremail}</p>
                                                 </div>
                                                 <LogoutButton />
                                                 </div>
@@ -287,4 +297,3 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;

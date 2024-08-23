@@ -2,9 +2,8 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation';
 import { signIn, getSession } from 'next-auth/react';
-import { ToastContainer, toast } from 'react-toastify';
 import { useState } from 'react';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 const Login =()=>{
    const [usernameError, setUsernameError] = useState(false);
    const [passwordError, setPasswordError] = useState(false);
@@ -14,33 +13,25 @@ const Login =()=>{
    const { push } = useRouter();
    const handleSubmit = async (e) => {
       e.preventDefault();
+      const pro = {
+         position: "top-right",
+         autoClose: 800,
+         hideProgressBar: true,
+         closeOnClick: true,
+         pauseOnHover: true,
+         draggable: true,
+         progress: 0,
+         theme: "colored",
+      }
       const username = e.target.username.value.trim();
       const password = e.target.password.value.trim();
       if (!username ) {
-            toast.warn('Please Enter User Name', {
-            position: "top-right",
-            autoClose: 600,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: 0,
-            theme: "colored",
-           
-            });
+            toast.warn('Please Enter User Name',pro);
          setUsernameError(!username.trim());
          setBtnText('Login')
          return;
        }else if(!password){
-         toast.warn('Please Enter Password', {
-            position: "top-right",
-            autoClose: 600,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: 0,
-            })
+         toast.warn('Please Enter Password',pro)
             setPasswordError(!password.trim());
             setBtnText('Login')
          return;
@@ -53,17 +44,19 @@ const Login =()=>{
            username,
            password,
          });
-     
+       
          if (res?.error) {
-           console.error(res.error);
+           toast.warn('Invalid Username or Password.Please try again.',pro)
+           setBtnText('Sign In'); // Reset button text
          } else {
            const session = await getSession();
            if (session) {
-            push('/all-file'); // Redirect to the /all-file page
-          }
+             push('/all-file'); 
+           }
          }
        } catch (error) {
-         console.error('An error occurred during sign-in:', error);
+         toast.error('An error occurred during sign-in',pro)
+         setBtnText('Sign In'); 
        }
     };
     return(
@@ -102,8 +95,6 @@ const Login =()=>{
                                  <label>Password</label>
                               </div>
                            </div>
-                           
-                           <ToastContainer />
                            <div className="col-lg-12">
                             <Link  className="text-primary float-right" href="/forget-password">Forgot Password?</Link>
                            </div>

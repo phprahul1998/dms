@@ -11,14 +11,22 @@ export default NextAuth({
       },
       async authorize(credentials, req) {
         try {
-          // Example user data; in practice, fetch this from your API
-          const user = { id: "1", name: "J Smith", email: "jsmith@example.com" };
-
-          // If the login was successful and returned user data
-          if (user) {
-            return user;
+          const registerResponse = await fetch(`${process.env.BASE_URL_ENDPOINT}/api/login/`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              username: credentials.username,
+              password: credentials.password,
+            }),
+          });
+          const userdata = await registerResponse.json();
+          
+          if (userdata.status) {
+            return userdata; // Assuming userdata contains user data when credentials are valid
           } else {
-            return null;
+            return null; // Invalid credentials, return null
           }
         } catch (error) {
           console.error("Error during login:", error);
@@ -30,9 +38,10 @@ export default NextAuth({
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.id = user.id;
-        token.name = user.name;
-        token.email = user.email;
+        const tokendata = user
+        token.access = tokendata.access;
+        token.name = tokendata.data.name;
+        token.email = tokendata.data.email;
       }
       return token;
     },
