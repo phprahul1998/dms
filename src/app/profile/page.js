@@ -242,7 +242,6 @@ return(
                                           </div>
                                        </div>
                                        <button type="submit" className="btn btn-primary"  dangerouslySetInnerHTML={{ __html: updatebtn }} />
-                                       <button type="reset" className="btn iq-bg-danger">Cancel</button>
                                     </form>
                            </div>
                         </div>
