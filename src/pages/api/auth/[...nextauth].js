@@ -42,14 +42,19 @@ export default NextAuth({
         token.access = tokendata.access;
         token.name = tokendata.data.name;
         token.email = tokendata.data.email;
+        token.phone = tokendata.data.phone;
+        token.organization = tokendata.data.organization;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
         session.id = token.id;
+        session.token = token.access;
         session.user.name = token.name;
         session.user.email = token.email;
+        session.user.phone = token.phone;
+        session.user.organization = token.organization;
       }
       return session;
     }

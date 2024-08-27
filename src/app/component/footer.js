@@ -11,7 +11,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="col-lg-6 text-right">
-                    <span className="mr-1">2024 ©</span> <a href="#" className="">CloudBOX</a>
+                    <span className="mr-1">2024 ©</span> <a href="#" className="">SoftageDocs</a>
                 </div>
             </div>
         </div>

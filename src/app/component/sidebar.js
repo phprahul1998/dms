@@ -268,7 +268,8 @@ export default function Sidebar(){
                                                     </a>
                                                 </div>
                                                 <div className="profile-detail mt-3">
-                                                <h5><a href="../app/user-profile-edit.html">{username}</a></h5>
+                                                <h5><Link
+                                                 href="/profile">{username}</Link></h5>
                                                 <p>{useremail}</p>
                                                 </div>
                                                 <LogoutButton />
@@ -276,7 +277,7 @@ export default function Sidebar(){
                                             <div className="profile-details mt-4 pt-3 border-top">
                                             <ul>
                                                 <li>
-                                                    <Link href="">View Profile</Link> 
+                                                    <Link href="/profile">View Profile</Link> 
                                                 
                                                 </li>
                                             </ul>

@@ -3022,10 +3022,11 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  
   word-wrap: break-word;
   background-color: #ffffff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: none !important;
   border-radius: 8px; }
   .card > hr {
     margin-right: 0;
@@ -8064,7 +8065,7 @@ body.sidebar-main .iq-top-navbar {
   .iq-top-navbar {
     width: 100%; }
     .iq-top-navbar .iq-search-bar.device-search {
-      margin-left: 20px; }
+      margin-left: 250px; }
   body.sidebar-main .iq-top-navbar {
     width: 100%; } }
 

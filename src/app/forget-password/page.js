@@ -1,3 +1,6 @@
+"use client"
+import Link from 'next/link';
+import { useState } from 'react';
 const Forgetpassword =()=>{
     return(
         <div className="wrapper">
@@ -19,6 +22,12 @@ const Forgetpassword =()=>{
                              </div>
                           </div>
                           <button type="submit" className="btn btn-primary">Reset</button>
+                          <p className="mt-3">
+                   
+                    <Link className="text-primary" href="/login">
+                      Back to Login
+                    </Link>
+                  </p>
                        </form>
                     </div>
                  </div>
