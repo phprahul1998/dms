@@ -35,13 +35,6 @@ const Profile =()=>{
    useEffect(() => {
       if (session && session.user) {
          const token = session.token;
-         setFormData(prevState => ({
-            ...prevState,
-            username: session.user.name || '',
-            name: session.user.name || '',
-            email: session.user.email || '',
-            phone: session.user.phone || ''
-         }));
          fetchUserData(token);
       }
    }, [session]);
