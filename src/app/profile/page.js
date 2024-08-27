@@ -268,7 +268,6 @@ return(
                                           <input type="password" required className="form-control" id="confirm_password" value={passwordData.confirm_password} onChange={handlePasswordChange} />
                                        </div>
                                        <button type="submit" className="btn btn-primary mr-2"  dangerouslySetInnerHTML={{ __html: saveBtn }} />
-                                       <button type="reset" className="btn iq-bg-danger">Cancel</button>
                                     </form>
                            </div>
                         </div>
