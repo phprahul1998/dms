@@ -51,7 +51,7 @@ const Login =()=>{
          } else {
            const session = await getSession();
            if (session) {
-             push('/all-file'); 
+             push('/folder/0'); 
            }
          }
        } catch (error) {

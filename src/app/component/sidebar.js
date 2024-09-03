@@ -11,10 +11,10 @@ export default function Sidebar(){
     const [firstchat,setFirstChar] = useState('')
     const router = usePathname();
     const navigate = useRouter();
-    const [activeItem, setActiveItem] = useState('all-file');
+    const [activeItem, setActiveItem] = useState('folder/0');
     useEffect(() => {
         if (router === '/') {
-            navigate.push('/all-file');
+            navigate.push('/folder/0');
         } else {
             setActiveItem(router);
         }
@@ -32,7 +32,7 @@ export default function Sidebar(){
         <div>
         <div className="iq-sidebar sidebar-default d-flex flex-column ">
         <div className="iq-sidebar-logo d-flex align-items-center justify-content-between">
-            <Link    href="/" className="header-logo iq-navbar-logo">
+            <Link    href="/folder/0" className="header-logo iq-navbar-logo">
             <img src="/logo2.png" className="img-fluid rounded-normal light-logo" alt="logo"/>
             </Link>
           
@@ -49,8 +49,8 @@ export default function Sidebar(){
             </div> */}
             <nav className="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" className="iq-menu">
-                <li className={activeItem === '/all-file' ? 'selet-caption' : ''}>
-                <Link href="/all-file" onClick={() => handleItemClick('/all-file')}>
+                <li className={activeItem === '/folder/0' ? 'selet-caption' : ''}>
+                <Link href="/folder/0" onClick={() => handleItemClick('/folder/0')}>
                                 <i className="lar la-file-alt iq-arrow-left pr-2"></i>All Files
                             </Link>                       
                         <ul id="page-folders" className="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
@@ -140,7 +140,7 @@ export default function Sidebar(){
             <nav className="navbar navbar-expand-lg navbar-light p-0">
             <div className="iq-navbar-logo d-flex align-items-center">
                 <i className="ri-menu-line wrapper-menu"></i>
-                <a href="index.html" className="header-logo">
+                <a href="/folder/0" className="header-logo">
                     <img src="/logo2.png" className="img-fluid rounded-normal light-logo" alt="logo"/>
                     {/* <img src="/logo-white.png" className="img-fluid rounded-normal darkmode-logo" alt="logo"/> */}
                 </a>

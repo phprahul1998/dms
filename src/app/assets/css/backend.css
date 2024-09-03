@@ -7540,7 +7540,7 @@ color: #fff !important;
   .iq-top-navbar .iq-sub-dropdown {
     width: 300px;
     height: auto;
-    position: absolute;
+    position: absolute !important;
     top: 100%;
     right: 0;
     left: auto;
@@ -16742,6 +16742,15 @@ ul.iq-contact-rest li a p {
      text-decoration: none !important;
     }
 
+    .upload  .btn-group li .item {
+      border-bottom: 0px !important;
+      color:#000 !important
+      }
+    .upload .dropdown-menu{
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+      top: 10px !important;
+      left: -20px !important;
+    }
 .select-dropdown {
   position: relative; }
   .select-dropdown .btn-group .dropdown-toggle {
@@ -16767,6 +16776,7 @@ ul.iq-contact-rest li a p {
     padding: 10px 20px;
     border-bottom: 1px solid #f1f1f1;
     color: #535f6b; }
+  
     .select-dropdown .btn-group li .item:hover {
       background-color: #f3f3f3; }
     .select-dropdown .btn-group li .item i {

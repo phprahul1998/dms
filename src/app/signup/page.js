@@ -101,7 +101,7 @@ const Signup = () => {
             } else {
                const session = await getSession();
                if (session) {
-                push('/all-file'); // Redirect to the /all-file page
+                push('/folder/0'); // Redirect to the /folder/0 page
               }
              }
 

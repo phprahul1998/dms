@@ -55,9 +55,14 @@ export default NextAuth({
         session.user.email = token.email;
         session.user.phone = token.phone;
         session.user.organization = token.organization;
+        const expiresIn = 6 * 60 * 60 * 1000; 
+        session.expires = new Date(Date.now() + expiresIn).toISOString();
       }
       return session;
     }
   },
-  secret: process.env.NEXTAUTH_SECRET
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    maxAge: 6 * 60 * 60,
+  },
 });
