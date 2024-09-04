@@ -98,24 +98,25 @@ const Folder = ({ params: { slug } }) => {
                 </div>
               </div>
               
-              <table className="table">
+              <table className="table filelist">
                 <thead>
                   <tr>
                     <th>Name</th>  
                     <th>Size</th>                   
-                 
                   </tr>
                 </thead>
                 <tbody>
                   {tabledata.map((item, index) => (
-                    <tr key={index}>
+                   <tr key={index} className="table-row">
                       <td>
-                      <img src="/folder.png" />
-                        <Link href={`/${item.type}/${item.id}`}>
+                      <img className='post-load-thumbnail' src={item.type=='folder' ?'/folder.png':item.metadata.file_url} />
+                        <span><Link href={`/${item.type}/${item.id}/${item.metadata.parent_folder_id}`}>
                           {item.name }
-                        </Link>
+                        </Link></span>
                       </td>
                       <td>{item.type=='folder' ?item.metadata.filecount: convertSize(item.metadata.file_size) }</td>
+                      <td className="action-icon">
+                       <button className="more-button">More</button></td>
                     </tr>
                   ))}
                 </tbody>
